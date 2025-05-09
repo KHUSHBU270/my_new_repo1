@@ -2,14 +2,21 @@
 lock "~> 3.19.2"
 
 set :application, "stripe_example"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "https://github.com/KHUSHBU270/my_new_repo1.git"
 
-# Default branch is :master
+# Default branch is :main
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+set :deploy_to, "/home/deploy/#{fetch :application}"
+set :rvm_type, :user
+set :rvm_ruby_version, '3.4.1'
+set :branch, 'main'
 
+append :linked_files, "config/master.key"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+
+set :keep_releases, 5
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
