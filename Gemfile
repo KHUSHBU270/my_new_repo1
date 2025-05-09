@@ -53,3 +53,4 @@ end
 
 gem 'stripe'
 gem 'dotenv-rails'
+gem 'debug', platforms: [:mri]
